@@ -1,3 +1,9 @@
 import passwordGeneration
+import PasswordStorageAndRetrevial
 
-print(passwordGeneration.generatePassword(minNum=2, minSpecial=1))
+password = passwordGeneration.generatePassword();
+userName = "HelloWorld";
+passwordDict = dict()
+passwordDict["test.com"] = [userName, password]
+PasswordStorageAndRetrevial.writePasswordSet(userName, passwordDict)
+print(PasswordStorageAndRetrevial.readPasswordSet(userName))
