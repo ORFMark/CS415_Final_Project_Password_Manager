@@ -1,9 +1,9 @@
 import passwordGeneration
 import PasswordStorageAndRetrevial
+from PasswordGenerationScreen import PasswordGenerationScreen
+import tkinter as tk
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = PasswordGenerationScreen(root)
+    root.mainloop()
 
-password = passwordGeneration.generatePassword();
-userName = "HelloWorld";
-passwordDict = dict()
-passwordDict["test.com"] = [userName, password]
-PasswordStorageAndRetrevial.writePasswordSet(userName, passwordDict)
-print(PasswordStorageAndRetrevial.readPasswordSet(userName))
