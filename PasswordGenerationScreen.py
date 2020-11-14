@@ -1,8 +1,11 @@
 import tkinter as tk
 import tkinter.font as tkFont
 
+from passwordGeneration import generatePassword
+
+
 class PasswordGenerationScreen:
-    def __init__(self, root):
+    def __init__(self, root, passwordDict):
         #setting title
         root.title("undefined")
         #setting window size
@@ -14,65 +17,67 @@ class PasswordGenerationScreen:
         root.geometry(alignstr)
         root.resizable(width=False, height=False)
 
-        GButton_522=tk.Button(root)
-        GButton_522["bg"] = "#efefef"
+        passwordGenerationButton=tk.Button(root)
+        passwordGenerationButton["bg"] = "#efefef"
         ft = tkFont.Font(family='Times',size=10)
-        GButton_522["font"] = ft
-        GButton_522["fg"] = "#000000"
-        GButton_522["justify"] = "center"
-        GButton_522["text"] = "Generate Password"
-        GButton_522.place(x=60,y=150,width=70,height=25)
-        GButton_522["command"] = self.GButton_522_command
+        passwordGenerationButton["font"] = ft
+        passwordGenerationButton["fg"] = "#000000"
+        passwordGenerationButton["justify"] = "center"
+        passwordGenerationButton["text"] = "Generate Password"
+        passwordGenerationButton.place(x=60,y=150,width=70,height=25)
+        passwordGenerationButton["command"] = self.passwordGenerationButton
 
-        GLineEdit_565=tk.Entry(root)
-        GLineEdit_565["borderwidth"] = "1px"
+        URLTextBox=tk.Entry(root)
+        URLTextBox["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times',size=10)
-        GLineEdit_565["font"] = ft
-        GLineEdit_565["fg"] = "#333333"
-        GLineEdit_565["justify"] = "center"
-        GLineEdit_565["text"] = "Entry"
-        GLineEdit_565.place(x=130,y=40,width=70,height=25)
+        URLTextBox["font"] = ft
+        URLTextBox["fg"] = "#333333"
+        URLTextBox["justify"] = "center"
+        URLTextBox["text"] = "Entry"
+        URLTextBox.place(x=130,y=40,width=70,height=25)
 
-        GLineEdit_499=tk.Entry(root)
-        GLineEdit_499["borderwidth"] = "1px"
+        usernameTextBox=tk.Entry(root)
+        usernameTextBox["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times',size=10)
-        GLineEdit_499["font"] = ft
-        GLineEdit_499["fg"] = "#333333"
-        GLineEdit_499["justify"] = "center"
-        GLineEdit_499["text"] = "Entry"
-        GLineEdit_499.place(x=130,y=80,width=70,height=25)
+        usernameTextBox["font"] = ft
+        usernameTextBox["fg"] = "#333333"
+        usernameTextBox["justify"] = "center"
+        usernameTextBox["text"] = "Entry"
+        usernameTextBox.place(x=130,y=80,width=70,height=25)
 
-        GMessage_71=tk.Message(root)
+        passwordDisplayMessage=tk.Message(root)
         ft = tkFont.Font(family='Times',size=10)
-        GMessage_71["font"] = ft
-        GMessage_71["fg"] = "#333333"
-        GMessage_71["justify"] = "center"
-        GMessage_71["text"] = " "
-        GMessage_71.place(x=120,y=110,width=80,height=25)
+        passwordDisplayMessage["font"] = ft
+        passwordDisplayMessage["fg"] = "#333333"
+        passwordDisplayMessage["justify"] = "center"
+        passwordDisplayMessage["text"] = " "
+        passwordDisplayMessage.place(x=120,y=110,width=80,height=25)
 
-        GLabel_201=tk.Label(root)
+        URLTextLabel=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
-        GLabel_201["font"] = ft
-        GLabel_201["fg"] = "#333333"
-        GLabel_201["justify"] = "center"
-        GLabel_201["text"] = "Website URL"
-        GLabel_201.place(x=0,y=40,width=97,height=30)
+        URLTextLabel["font"] = ft
+        URLTextLabel["fg"] = "#333333"
+        URLTextLabel["justify"] = "center"
+        URLTextLabel["text"] = "Website URL"
+        URLTextLabel.place(x=0,y=40,width=97,height=30)
 
-        GLabel_449=tk.Label(root)
+        usernameLabel=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
-        GLabel_449["font"] = ft
-        GLabel_449["fg"] = "#333333"
-        GLabel_449["justify"] = "center"
-        GLabel_449["text"] = "Username"
-        GLabel_449.place(x=10,y=80,width=70,height=25)
+        usernameLabel["font"] = ft
+        usernameLabel["fg"] = "#333333"
+        usernameLabel["justify"] = "center"
+        usernameLabel["text"] = "Username"
+        usernameLabel.place(x=10,y=80,width=70,height=25)
 
-        GLabel_249=tk.Label(root)
+        passwordLabel=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
-        GLabel_249["font"] = ft
-        GLabel_249["fg"] = "#333333"
-        GLabel_249["justify"] = "center"
-        GLabel_249["text"] = "Your Password:"
-        GLabel_249.place(x=0,y=110,width=101,height=30)
+        passwordLabel["font"] = ft
+        passwordLabel["fg"] = "#333333"
+        passwordLabel["justify"] = "center"
+        passwordLabel["text"] = "Your Password:"
+        passwordLabel.place(x=0,y=110,width=101,height=30)
 
-    def GButton_522_command(self):
-        print("command")
+    def passwordGenerationButton(self):
+        userPass = generatePassword()
+        passWordDict[URLTextBox]
+
