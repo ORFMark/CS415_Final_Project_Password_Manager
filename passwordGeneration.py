@@ -12,7 +12,8 @@ def verifyPassword(passwordCanidate, upperCase, lowerCase, number, special):
         else:
             special -= 1
     return upperCase <= 0 and lowerCase <= 0 and number <= 0 and special <= 0
-def generatePassword(minUpperCase = 0, minLowercase = 0, minNum = 0, minSpecial = 0, minLength = 16, maxLength = 32):
+
+def generatePassword(minUpperCase = 0, minLowercase = 0, minNum = 0, minSpecial = 0, minLength = 32, maxLength = 32):
     passList = []
     i = 0;
     while i < 1000:
