@@ -3,15 +3,17 @@ import tkinter.font as tkFont
 from copy import copy
 
 from InfoClass import InfoClass
+from PasswordStorageAndRetrevial import readPasswordSet
 
 
 class LoginScreen:
-    appInfo = InfoClass()
-    usernameEntry = 0
-    def __init__(self, root, appInfo):
-        self.appInfo = copy(appInfo);
+
+    def __init__(self, root, appInfo, nextFrame):
+        self.nextFrame = nextFrame
+        self.appInfo = appInfo
+        self.appInfo.setNumberOfInstances(self.appInfo.getNumberOfInstances() + 1)
+        print(self.appInfo.getNumberOfInstances())
         #setting title
-        root.title("Login")
         #setting window size
         usernameLabel = tk.Label(root, text = "Username")
         usernameLabel.grid()
@@ -34,6 +36,9 @@ class LoginScreen:
     def login(self):
         print("login!")
         self.appInfo.setUser(self.usernameEntry.get())
+        self.appInfo.setPasswords(readPasswordSet("HelloWorld"))
+        print(self.appInfo.getPasswords())
+        self.nextFrame.tkraise()
 
 
 
