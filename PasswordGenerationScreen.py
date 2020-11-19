@@ -48,7 +48,7 @@ class PasswordGenerationScreen:
         self.passwordDisplayMessage["fg"] = "#333333"
         self.passwordDisplayMessage["justify"] = "left"
         self.passwordDisplayMessage["text"] = " "
-        self.passwordDisplayMessage.place(x=0, y=110)
+        self.passwordDisplayMessage.place(x=300,y=300)
 
         URLTextLabel = tk.Label(root)
         ft = tkFont.Font(family='Times', size=10)
